@@ -1,0 +1,393 @@
+<style>
+
+
+
+
+
+html{
+  scroll-behavior:smooth; 
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body { /* try type yellow */
+  background: #fff;
+}
+.ultimate{
+    background: linear-gradient(45deg, rgba(255,165,0,0.6),rgba(0,206,209,1));
+    margin-bottom: 150px;
+    overflow-y: hidden;
+}
+.ultimate>ul,
+button{
+  visibility: hidden;
+}
+
+#navbar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:40px 100px;
+  transition:0.6s;
+}
+#navbar> a{
+ text-decoration: none;
+ font-size: 3em;
+ letter-spacing: 2px;
+ position:relative;
+ color:#fff;
+}
+#navbar ul{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+}
+#navbar ul li{
+  list-style: none;
+  position:relative;
+}
+#navbar ul li a{
+  text-decoration: none;
+  margin:0 15px;
+  color:#fff;
+  font-size: 1.4em;
+  letter-spacing: 2px;
+}
+
+.header{
+  color:#fff;
+  text-align: center;
+  margin:120px;
+}
+.header h1{
+  font-size: 3em;
+  letter-spacing: 2px;
+  margin-top:400px;
+  margin-bottom:30px;
+}
+.header p{
+  line-height: 1.3em;
+  margin-bottom:60px;
+}
+.header a{
+  text-decoration: none;
+  color:white;
+  letter-spacing: 2px;
+  border:1px solid white;
+  padding:20px 60px;
+  border-radius: 10px;
+}
+
+.container{
+  text-align: center;
+  color: rgb(128,128,128);
+  width:80%;
+  margin:0 auto;
+}
+.container h1{
+  color:black;
+  margin-bottom:30px;
+  letter-spacing: 4px;
+  font-size: 3em;
+}
+#services{
+  font-size: 1.3rem;
+  line-height: 1.3em;
+  letter-spacing: 4px;
+  padding:100px 0;
+}
+.servicegrid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap:2em;
+}
+.col1{
+  grid-column:1/2 ;
+}
+.col2{
+  grid-column:2/3 ;
+}
+.col3{
+  grid-column:3/4;
+}
+.serviceimage{
+  width:130px;
+  height:130px;
+  background: rgba(0,206,209,1);
+  border-radius: 50%;
+  margin:20px auto;
+}
+#services>p{
+  margin-bottom: 40px;
+}
+
+#about{
+  margin-top: 250px;
+  margin-bottom: 250px;
+  font-size: 1.3rem;
+  letter-spacing: 4px;
+  line-height: 1.3em;
+  padding:100px 0;
+}
+#about p:nth-child(3){
+  float:left;
+  width:200px;
+  text-align: right;
+  margin:40px 0;
+}
+.aboutimage{
+  width:160px;
+  height:160px;
+  background:grey;
+  border-radius: 50%;
+  float:left;
+  margin:40px;
+  position:relative;
+}
+.aboutimage img{
+ position:absolute;
+ top:10px;
+ left:10px;
+ width:140px;
+ height:140px;
+ border-radius: 50%;
+}
+#contact{
+  background: linear-gradient(45deg, rgba(255, 165, 0, 0.6),rgba(0,206,209,1));
+  color:white;
+  padding:50px;  
+  margin:950px 0 0 0;
+  text-align: center;
+  clear:both;
+  letter-spacing: 2px;
+}
+#contact h1{
+  letter-spacing: 2px;
+  padding:10px;
+}
+#contact p{
+  font-size: .9em;
+  margin-bottom:50px;
+}
+#contact a{
+  font-size:5em;
+  text-decoration: none;
+  color:#fff;
+}
+footer{
+  text-align: center;
+  padding:20px;
+}
+
+#navbar.sticky{
+  padding:10px 90px;
+  background: linear-gradient(45deg, rgba(255,165,0,1),rgba(0,206,209,1));
+  z-index:1000;
+}
+#navbar.sticky ul li a{
+  font-size: 1.2em;
+}
+#navbar.sticky navbar>a{
+  font-size: 2em;
+}
+
+@media(max-width:400px){
+ .ultimate{
+    background: linear-gradient(45deg, rgba(255,165,0,0.6),rgba(0,206,209,1));
+    height:400px;
+    margin-bottom: 20px;
+}
+.ultimate>ul,
+button{
+  visibility: visible;
+  z-index:1000;
+}
+button{
+  width:25px;
+  height:25px;
+  border:none;
+  outline:none;
+  background: #ff3422;
+  transition:0.4s;
+}
+#navbar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:10px 30px;
+  transition:0.6s;
+  background: #000;
+  z-index:1000;
+}
+#navbar.fixed{
+  background: #000;
+  padding:10px 30px;
+}
+#navbar> a{
+ text-decoration: none;
+ font-size:1em;
+ letter-spacing: 1.5px;
+ position:relative;
+ color:#fff;
+ font-weight: 600;
+}
+#navbar ul{
+  display:none;
+}
+.header{
+  margin:20px;
+}
+.header h1{
+  font-size: 1.5em;
+  letter-spacing: 1.5px;
+  margin-top:100px;
+  margin-bottom:20px;
+}
+.header p{
+  line-height: 1.3em;
+  margin-bottom:40px;
+}
+.header a{
+  text-decoration: none;
+  color:white;
+  letter-spacing: 2px;
+  border:1px solid white;
+  padding:10px 40px;
+  border-radius: 10px;
+}
+.container{
+  text-align: center;
+  color: rgb(128,128,128);
+  width:90%;
+  margin:0 auto;
+}
+.container h1{
+  color:black;
+  margin-bottom:20px;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+}
+#services{
+  font-size: 1rem;
+  line-height: 1.3em;
+  letter-spacing: 1.5px;
+  padding:70px 0;
+}
+.servicegrid{
+  display:flex;
+  flex-direction: column;;
+}
+.serviceimage{
+  width:80px;
+  height:80px;
+  background: rgba(0,206,209,1);
+  border-radius: 50%;
+  margin:0 auto;
+}
+#about{
+  margin-top: 20px;
+  margin-bottom: 250px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 1.3em;
+  padding: 70px 0;
+}
+#about p:nth-child(3){
+  float:left;
+  width:200px;
+  text-align: right;
+  margin:40px 0;
+}
+.aboutimage{
+  width:100px;
+  height:100px;
+  background:grey;
+  border-radius: 50%;
+  float:left;
+  margin:45px 20px;
+  position:relative;
+}
+.aboutimage img{
+ position:absolute;
+ top:5px;
+ left:5px;
+ width:90px;
+ height:90px;
+ border-radius: 50%;
+}
+#contact{
+  background: linear-gradient(45deg, rgba(255, 165, 0, 0.6),rgba(0,206,209,1));
+  color:white;
+  padding:50px;  
+  margin:350px 0 0 0;
+  text-align: center;
+  clear:both;
+  letter-spacing: 2px;
+}
+#contact h1{
+  letter-spacing: 1.5px;
+}
+#contact p{
+  letter-spacing: .5px;
+  font-size: 1em;
+  margin-bottom:50px;
+}
+#contact a{
+  font-size:2.5em;
+  text-decoration: none;
+  color:#fff;
+}
+footer{
+  text-align: center;
+  padding:10px;
+}
+
+
+.ultimate>ul{
+  position:fixed;
+  top:40px;
+  width:100%;
+  transition:0.3s;
+  transform: translateY(-120px);
+}
+.ultimate>ul li{
+  list-style: none;
+  padding:3px;
+  display:block;
+  background: #323232;
+    border-bottom: 1px solid #dddddd;
+}
+.ultimate>ul li a{
+  text-decoration: none;
+  color:#fff;
+  margin:5px;
+}
+.ultimate>ul.show{
+  transform: translateY(0);
+}
+
+button.rotate{
+  transform: rotate(180deg);
+}
+button:hover{
+  cursor:pointer;
+}
+}
+
+
+
+
+
+
+</style>
